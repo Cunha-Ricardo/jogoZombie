@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Start zombie game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="estilo.css" />
+    <script>
+        function iniciarJogo() {
+            var nivel = document.getElementById('nivel').value
+
+            if (nivel === '') {
+                alert('selecione um nivel para iniciar o jogo')
+                return false
+            }
+
+            window.location.href = "app.html?" + nivel
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>Your Score: <span id="game-score"></span></p>
+    <div class="cursor"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="imagens/zombie_start.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option class="niveis" value="">-- SELECIONE UM NIVEL DE DIFICULDADE --</option>
+                            <option class="niveis" value="facil">Facil</option>
+                            <option class="niveis" value="medio">Medio</option>
+                            <option class="niveis" value="dicifil">Dificil</option>
+                            <option class="niveis" value="extremo">Extremo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-danger btn-lg" ; onclick="iniciarJogo()">Iniciar Jogo</button>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
